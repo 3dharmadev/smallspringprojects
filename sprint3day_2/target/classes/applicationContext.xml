@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <!--<bean id="loose_bean" class="Q3.Runner">
+
+    <property name="shapes" ref="Tri"></property>
+    </bean>
+    
+    
+
+    <bean id="ci" class="Q3.Circle" />
+
+
+    <bean id="cy" class="Q3.Cylinder" />
+
+
+    <bean id="Tri" class="Q3.Triangle" /> -->   
+    
+    
+    
+    <bean id="t" class="Q1.Tourist" >
+   
+   <constructor-arg value="Debabrata Satapathy" />
+   <constructor-arg value="22" />
+   <constructor-arg value="19929291182112" />
+    
+   </bean>
+
+
+
+
+<bean id="h" class="Q1.HolidayPackage">
+
+<property name="package_name" value="Way to Hawai"/>
+
+<property name="tourist" ref="t"/>
+
+
+
+<property name="package_expiry">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="07-07-2023" />
+			</bean>
+		</property>
+
+<property name="package_price" value="1200" /> 
+
+</bean>
+
+
+
+<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="dd-MM-yyyy" />
+	</bean>
+ 
+
+</beans>

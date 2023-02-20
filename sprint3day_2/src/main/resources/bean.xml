@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  Department data-->
+	
+	<bean id="dept1" class="Q2.app.model.Department">
+	<property name="deptId" value="1"/>
+	<property name="deptName" value="Sales"/>
+	<property name="location" value="Cuttack"/>
+	</bean>
+	
+	
+	<bean id="dept2" class="Q2.app.model.Department">
+	<property name="deptId" value="2"/>
+	<property name="deptName" value="Marketing"/>
+	<property name="location" value="Bhuabaneswar"/>
+	</bean>
+	
+	
+	<bean id="dept3" class="Q2.app.model.Department">
+	<property name="deptId" value="3"/>
+	<property name="deptName" value="Accounting"/>
+	<property name="location" value="Pune"/>
+	</bean>
+	
+	<!--  Employeee data-->
+	<bean id="emp1" class="Q2.app.model.Employee">
+	   <property name="empId" value="1"/> 
+       <property name="empName" value="ankit"/>
+       <property name="address" value="odisha"/>
+        <property name="salary" value="12300"/>
+	</bean>
+	
+	<bean id="emp2" class="Q2.app.model.Employee">
+	   <property name="empId" value="2"/> 
+       <property name="empName" value="Vinay"/>
+       <property name="address" value="Delhi"/>
+        <property name="salary" value="42300"/>
+	</bean>
+	
+	<bean id="emp3" class="Q2.app.model.Employee">
+	   <property name="empId" value="3"/> 
+       <property name="empName" value="Tarun"/>
+       <property name="address" value="Mumbai"/>
+        <property name="salary" value="43300"/>
+	</bean>
+	
+	<bean id="emp4" class="Q2.app.model.Employee">
+	   <property name="empId" value="4"/> 
+       <property name="empName" value="Nihal"/>
+       <property name="address" value="Puri"/>
+        <property name="salary" value="34000"/>
+	</bean>
+	
+	
+	<!-- Demo section-->
+	
+	<bean id="de" class="Q2.app.usecases.Demo" init-method="myInit" destroy-method="cleanUp">
+	
+	<property name="theMap">
+	
+	<map>
+	
+	<entry key-ref="dept1" value-ref="emp1"/>
+	<entry key-ref="dept2" value-ref="emp2"/>
+	<entry key-ref="dept3" value-ref="emp3"/>
+	<entry key-ref="dept3" value-ref="emp4"/>
+	
+	</map>
+	
+	
+	
+	</property>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</bean>
+	
+	
+	
+</beans>
